@@ -15,10 +15,16 @@ export function formatEpisode(current: string, total: string): string {
 
 export function getImageUrl(url: string): string {
   if (!url) return '/placeholder-movie.jpg'
-  if (url.startsWith('http')) {
-    return `https://phimapi.com/image.php?url=${encodeURIComponent(url)}`
+  
+  let absoluteUrl = url
+  if (url.startsWith('//')) {
+    absoluteUrl = `https:${url}`
+  } else if (!url.startsWith('http')) {
+    const cleanUrl = url.startsWith('/') ? url : `/${url}`
+    absoluteUrl = `https://phimimg.com${cleanUrl}`
   }
-  return url
+  
+  return `https://phimapi.com/image.php?url=${encodeURIComponent(absoluteUrl)}`
 }
 
 export function sanitizeHtml(html: string): string {

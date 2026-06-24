@@ -18,4 +18,9 @@ describe('getImageUrl', () => {
     const url = getImageUrl('https://phimimg.com/image.jpg')
     expect(url).toContain('phimapi.com/image.php')
   })
+  it('correctly handles relative paths and prepends the CDN host', () => {
+    const url = getImageUrl('upload/vod/2026/image.jpg')
+    expect(url).toContain('phimapi.com/image.php')
+    expect(url).toContain(encodeURIComponent('https://phimimg.com/upload/vod/2026/image.jpg'))
+  })
 })
