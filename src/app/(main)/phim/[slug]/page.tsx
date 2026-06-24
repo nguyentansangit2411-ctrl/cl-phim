@@ -46,6 +46,7 @@ export default async function MovieDetailPage({ params }: { params: { slug: stri
               className="object-cover"
               unoptimized
               priority
+              referrerPolicy="no-referrer"
             />
           </div>
           <Link href={`/phim/${params.slug}/xem?server=0&tap=0`}>
