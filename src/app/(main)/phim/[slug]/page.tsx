@@ -5,9 +5,8 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { EpisodeList } from '@/components/movies/EpisodeList'
-import { getImageUrl } from '@/lib/utils'
+import { getImageUrl, sanitizeHtml } from '@/lib/utils'
 import { Star, Play } from 'lucide-react'
-import DOMPurify from 'isomorphic-dompurify'
 import type { MovieDetailResponse, Category, Country } from '@/lib/kkphim/types'
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
@@ -107,7 +106,7 @@ export default async function MovieDetailPage({ params }: { params: { slug: stri
             <div
               className="text-muted-foreground text-sm leading-relaxed prose prose-sm dark:prose-invert max-w-none"
               dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(movie.content)
+                __html: sanitizeHtml(movie.content)
               }}
             />
           )}

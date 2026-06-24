@@ -5,7 +5,6 @@ const nextConfig = {
     serverComponentsExternalPackages: [
       '@supabase/ssr',
       '@supabase/supabase-js',
-      'isomorphic-dompurify',
     ],
   },
   images: {
