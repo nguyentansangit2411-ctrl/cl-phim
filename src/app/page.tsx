@@ -34,7 +34,7 @@ export default async function HomePage() {
                 <Button variant="outline" size="sm">Xem tất cả</Button>
               </Link>
             </div>
-            <MovieGrid movies={newItems.slice(0, 24)} />
+            <MovieGrid movies={newItems.slice(0, 6)} />
           </section>
 
           {seriesItems.length > 0 && (
@@ -45,7 +45,7 @@ export default async function HomePage() {
                   <Button variant="outline" size="sm">Xem tất cả</Button>
                 </Link>
               </div>
-              <MovieGrid movies={seriesItems} />
+              <MovieGrid movies={seriesItems.slice(0, 6)} />
             </section>
           )}
 
@@ -57,7 +57,7 @@ export default async function HomePage() {
                   <Button variant="outline" size="sm">Xem tất cả</Button>
                 </Link>
               </div>
-              <MovieGrid movies={singleItems} />
+              <MovieGrid movies={singleItems.slice(0, 6)} />
             </section>
           )}
 
@@ -69,7 +69,7 @@ export default async function HomePage() {
                   <Button variant="outline" size="sm">Xem tất cả</Button>
                 </Link>
               </div>
-              <MovieGrid movies={animeItems} />
+              <MovieGrid movies={animeItems.slice(0, 6)} />
             </section>
           )}
         </div>

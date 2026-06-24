@@ -1,5 +1,5 @@
 import { getMovieList, getNewMovies } from '@/lib/kkphim/api'
-import { MovieGrid } from '@/components/movies/MovieGrid'
+import { MovieListWithPagination } from '@/components/movies/MovieListWithPagination'
 import { notFound } from 'next/navigation'
 
 const TYPE_LABELS: Record<string, string> = {
@@ -37,7 +37,7 @@ export default async function ListPage({ params, searchParams }: Props) {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold">{label}</h1>
-      <MovieGrid movies={movies} />
+      <MovieListWithPagination initialMovies={movies} type={params.type} />
     </div>
   )
 }
