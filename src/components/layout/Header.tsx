@@ -39,7 +39,7 @@ export function Header({ user }: HeaderProps) {
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
             <Image
-              src="/badmovie.png"
+              src="/logo-badmovie.png"
               alt="BadMovie"
               width={140}
               height={140}
