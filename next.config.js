@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    // Tách các package nặng khỏi Edge Runtime để tránh lỗi tracing trên Vercel
+    serverComponentsExternalPackages: [
+      '@supabase/ssr',
+      '@supabase/supabase-js',
+      'isomorphic-dompurify',
+    ],
+  },
   images: {
     unoptimized: true, // phimapi.com image proxy
     remotePatterns: [
