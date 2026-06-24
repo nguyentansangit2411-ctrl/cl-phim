@@ -1,3 +1,5 @@
+'use client'
+
 import { MovieCard } from './MovieCard'
 import { Skeleton } from '@/components/ui/skeleton'
 import type { Movie } from '@/lib/kkphim/types'
