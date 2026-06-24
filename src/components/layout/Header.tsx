@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { Film, Search, LogOut } from 'lucide-react'
+import { Search, LogOut } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { createClient } from '@/lib/supabase/client'
@@ -36,9 +37,15 @@ export function Header({ user }: HeaderProps) {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex h-16 items-center gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <Film className="h-6 w-6 text-primary" />
-            <span className="hidden sm:inline">CL Film</span>
+          <Link href="/" className="flex items-center shrink-0">
+            <Image
+              src="/badmovie.png"
+              alt="BadMovie"
+              width={140}
+              height={140}
+              className="h-9 w-9 sm:h-10 sm:w-auto sm:max-w-[130px] object-contain rounded-lg"
+              priority
+            />
           </Link>
 
           {/* Navigation */}
