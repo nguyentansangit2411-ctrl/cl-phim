@@ -11,7 +11,12 @@ export const metadata: Metadata = {
     default: 'CL Film — Xem Phim Cùng Gia Đình',
   },
   description: 'Website xem phim trực tuyến miễn phí dành cho gia đình',
+  icons: {
+    icon: '/logo-badmovie.png',
+    apple: '/logo-badmovie.png',
+  },
 }
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
